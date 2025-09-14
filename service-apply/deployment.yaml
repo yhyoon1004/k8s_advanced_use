@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yh-dp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: yh-app
+  template:
+    metadata:
+      labels:
+        app: yh-app
+    spec:
+      containers:
+        - name: yh-nginx
+          image: nginx
+          ports:
+            - containerPort: 80
