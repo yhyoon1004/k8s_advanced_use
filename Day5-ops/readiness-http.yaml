@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: readiness-http
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.25
+    ports:
+    - containerPort: 80
+    command: ["sh","-c"]
+    args: ["sleep 20 && nginx -g 'daemon off;'"]
+    readinessProbe:
+      httpGet:
+        path: /          # 확인할 경로
+        port: 80         # HTTP 포트
+      initialDelaySeconds: 3
+      periodSeconds: 5
+
