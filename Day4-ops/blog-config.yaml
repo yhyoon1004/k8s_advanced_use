@@ -4,5 +4,5 @@ metadata:
   name: blog-config
 data:
   APP_ENV: "production"
-  LOG_LEVEL: "info"
+  LOG_LEVEL: "debug"
 

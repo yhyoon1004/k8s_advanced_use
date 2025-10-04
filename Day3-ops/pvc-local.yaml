@@ -5,6 +5,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce            # 하나의 노드에서 읽기/쓰기
+#    - ReadWriteMany
   resources:
     requests:
       storage: 1Gi             # 요청 용량
